@@ -4,7 +4,7 @@ import org.apache.spark.sql.types.UserDefinedType
 import org.apache.spark.sql.{SparkSession, SparkSessionExtensions}
 
 trait SparkProcess extends extensions.SparkSessionType {
-  def processName: String = getClass.getSimpleName.dropRight(1)
+  implicit def processName: String = getClass.getSimpleName.dropRight(1)
 
   def additionalConfigs: Map[String, Any] = Map()
 
